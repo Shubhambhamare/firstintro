@@ -1,35 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 import Classcomponent from "./Classcomponent";
-import FunctComp from "./FunctComp";
+import FunctComp from "./FunctComp"
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isFunctional: true,
+      isClass: true,
+    };
+  }
 
-
-
-function Header(){
-    const [classcomponent,setClasscomponent] = useState(false);
-    const [functComp,setFunctComp] = useState(false);
-
+  render() {
     return (
-        <div className="container">
-        <div>
-            <h1 className="Head">Style USing Functional And Class Components</h1>
-            <div className="btns">
-                <button className="button1" onClick = {() => setFunctComp(!functComp)}>To See THe Function Component click</button>
-                <button className="button2" onClick={() => setClasscomponent(!classcomponent)}>To see the Class Component Click Me</button>
-            </div>
-            <div className="Click">
-                <div className="functCompo">
-                    {functComp && <FunctComp/>}
-                </div>
-                <div className="classcomponent">
-                    {classcomponent && <Classcomponent/>}
-                </div>
-        </div>
-        </div>
-        </div>
-
-
-    )
-};
-
-
-export default Header;
+      <div className="App">
+        <h1>Styling Using Functional and Class Component</h1>
+        <button onClick={()=>this.setState({ isFunctional:!this.state.isFunctional })}> To see styling in Functional Component </button>
+        <button onClick={()=>this.setState({ isClass: !this.state.isClass })}> To see styling in Class Component </button>
+        {this.state.isFunctional ? <FunctComp /> : null}
+        {this.state.isClass ? <Classcomponent /> : null}
+      </div>
+    );
+  }
+}
+export default Home;

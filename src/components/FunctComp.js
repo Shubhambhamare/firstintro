@@ -10,9 +10,6 @@ function FunctComp() {
                 <p>
                     Created using External CSS
                 </p>
-                <p style={{color: 'red', lineHeight : 10,padding: 20}}>
-                    Created using Inline CSS
-                </p>
             </div>
         </div>
     )

@@ -11,9 +11,6 @@ class Classcomponent extends React.Component {
                     <p>
                         Created using external CSS
                     </p>
-                    <p style={{color: 'lightpink', lineHeight : 10,padding: 20}}>
-                        Created Using Inline CSS
-                    </p>
                 </div>
             </div>
         )
